@@ -1,0 +1,12 @@
+body  {
+   width: 500px;
+}
+td  {
+    padding: 2px;
+}
+.number-input  {
+    border-width: 1px;
+}
+.solve  {
+    background-color: mediumspringgreen;
+}

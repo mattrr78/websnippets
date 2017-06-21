@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Equation Solver</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/equationsolver.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser.
+                Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Equation Solver</h1>
+        <p>
+            Given a string of digits and a target integer, insert + and * operators between the digits until the
+            resultant equation results in the target, printing the result. If no possible equation exists with the
+            given string, print "No solution found".
+        </p>
+        <p>Ex: "123456" and 464 prints 12*34+56</p>
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/basecalculator.js"></script>
+        <script src="js/equationsolver.js"></script>
+        <script src="js/equationsolvercontroller.js"></script>
+        <script>
+            $(function() {
+                $("#txtDigits").on('input', EquationSolverController.clearAnswer);
+                $("#txtTarget").on('input', EquationSolverController.clearAnswer);
+                $("#btnSolve").click(EquationSolverController.handle);
+            });
+        </script>
+        <table>
+            <tr>
+                <td>Digits:</td>
+                <td><input id="txtDigits" class="number-input" value="123456"/></td>
+            </tr>
+            <tr>
+                <td>Target:</td>
+                <td><input id="txtTarget" class="number-input" value="464"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button id="btnSolve" class="solve">Solve!</button></td>
+            </tr>
+            <tr>
+                <td>Answer:</td>
+                <td><span id="spnAnswer"></span></td>
+            </tr>
+        </table>
+    </body>
+</html>
